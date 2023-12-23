@@ -1,0 +1,11 @@
+{
+  "name": "codewars",
+  "version": "1.0.0",
+  "description": "tasks from codewars",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin937",
+  "license": "ISC"
+}
