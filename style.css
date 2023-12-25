@@ -1,0 +1,8 @@
+.btn {
+  padding: 0.5rem 1.5rem;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.btn:hover {
+  color: crimson;
+}
