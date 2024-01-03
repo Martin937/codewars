@@ -8,4 +8,27 @@ const getRandomNumber = (min, max) => {
   return Math.round(Math.random() * (max - min) + min)
 }
 
-export { createNode, getRandomNumber }
+function htmlspecialchars(formData) {
+  let result = formData.split('').map((i) => {
+    switch (i) {
+      case "<":
+        return "&lt;";
+        break;
+      case ">":
+        return "&gt;"
+        break;
+      case '"':
+        return "&quot;"
+        break;
+      case "&":
+        return "&amp;"
+        break;
+      default:
+        return i;
+        break;
+    }
+  }).join('');
+  return result;
+}
+
+export { createNode, getRandomNumber, htmlspecialchars }
