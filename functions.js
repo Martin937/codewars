@@ -31,4 +31,14 @@ function htmlspecialchars(formData) {
   return result;
 }
 
-export { createNode, getRandomNumber, htmlspecialchars }
+function toCamelCase(str) {
+
+  const re = /\-\D/g
+  const re1 = /\_\D/g
+
+  let str1 = str.replace(re, s => s[1].toUpperCase())
+  return str1.replace(re1, s => s[1].toUpperCase())
+
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase }
