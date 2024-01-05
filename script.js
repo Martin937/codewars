@@ -7,6 +7,11 @@ createNode('p', `1. htmlspecialchars: ${htmlspecialchars("<h2>Hello World</h2>")
 createNode('p', `2. toCamelCase: ${toCamelCase("The_Stealth-Warrior")}`, target);
 
 
+function doubleChar(str) {
+  let result = str.split('').map((ch) => {
+    return ch + ch
+  }).join('');
+  return result
+}
 
-
-
+console.log(doubleChar("String"));
