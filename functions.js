@@ -41,4 +41,14 @@ function toCamelCase(str) {
 
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase }
+function remove(s, n) {
+  let maxS = s.match(/!/g).length;
+  let maxN = (n <= maxS) ? n : maxS;
+
+  for (let i = 0; i < maxN; i++) {
+    s = s.replace(/!/i, '');
+  }
+  return s;
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove }
