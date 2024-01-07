@@ -51,4 +51,21 @@ function remove(s, n) {
   return s;
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove }
+function generateHashtag(str) {
+  str = str.trim();
+  if (str.length === 0) return false;
+
+  let strIn = str.split(' ');
+
+  let result = strIn.map((i) => {
+    if (i.length) {
+      i = i[0].toUpperCase() + i.slice(1);
+      return i
+    }
+  });
+  result = '#' + result.join('')
+
+  return (result.length > 140) ? false : result;
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag }
