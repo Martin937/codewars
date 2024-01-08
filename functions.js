@@ -68,4 +68,14 @@ function generateHashtag(str) {
   return (result.length > 140) ? false : result;
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag }
+function pipeFix(numbers) {
+  let setNumbers = new Set(numbers)
+
+  for (let i = numbers[0]; i < numbers[numbers.length - 1]; i++) {
+    setNumbers.add(i)
+  }
+  let arrNumbers = [...setNumbers].sort((a, b) => a - b)
+
+  return arrNumbers
+}
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, }
