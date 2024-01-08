@@ -1,4 +1,4 @@
-import { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, } from './functions.js';
+import { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, } from './functions.js';
 
 const target = document.querySelector('.target')
 
@@ -8,6 +8,10 @@ createNode('p', `2. toCamelCase: ${toCamelCase("The_Stealth-Warrior")}`, target)
 createNode('p', `3. remove !*n: ${remove("!!!Hi !!hi!!! !hi", 3)}`, target);
 createNode('p', `4. generateHashtag: ${generateHashtag(" Hello there thanks for trying my Kata")}`, target);
 createNode('p', `5. pipeFix: ${pipeFix([6, 9, 15])}`, target);
+createNode('p', `6. validBraces: ${validBraces("(){}[]")}`, target);
+
+
+
 
 
 
