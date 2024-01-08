@@ -95,4 +95,14 @@ function validBraces(braces) {
   return arr.length === 0;
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, }
+function toCsvText(array) {
+  let result = '';
+  for (let i = 0; i < array.length; i++) {
+    let str = array[i].join(",")
+    let res = (array[i] === array[array.length - 1]) ? str : str + "\n"
+    result += res
+  }
+  return result;
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, }
