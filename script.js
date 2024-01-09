@@ -1,4 +1,4 @@
-import { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, } from './functions.js';
+import { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, } from './functions.js';
 
 const target = document.querySelector('.target')
 
@@ -11,6 +11,6 @@ createNode('p', `5. pipeFix: ${pipeFix([6, 9, 15])}`, target);
 createNode('p', `6. validBraces: ${validBraces("(){}[]")}`, target);
 createNode('p', `7. toCsvText: ${toCsvText([[-25, 21, 2, -33, 48],
 [30, 31, -32, 33, -34]])}`, target);
-
+createNode('p', `8. firstNonRepeatingLetter: ${firstNonRepeatingLetter('stress')}`, target);
 
 

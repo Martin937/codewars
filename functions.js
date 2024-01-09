@@ -105,4 +105,33 @@ function toCsvText(array) {
   return result;
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, }
+// function firstNonRepeatingLetter(s) {
+//   let arr = s.toLowerCase().split('');
+//   let result = '';
+//   let ctr = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     ctr = 0;
+//     for (let j = 0; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         ctr += 1;
+//       }
+//     }
+
+//     if (ctr < 2) {
+//       result = s[i];
+//       break;
+//     }
+//   }
+//   return result;
+// }
+function firstNonRepeatingLetter(s) {
+  for (var i in s) {
+    if (s.match(new RegExp(s[i], "gi")).length === 1) {
+      return s[i];
+    }
+  }
+  return '';
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, }
