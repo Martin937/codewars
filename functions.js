@@ -134,4 +134,8 @@ function firstNonRepeatingLetter(s) {
   return '';
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, }
+function incrementString(strng) {
+  return strng.replace(/[0-8]?9*$/, w => ++w)
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, incrementString, }
