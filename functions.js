@@ -138,4 +138,35 @@ function incrementString(strng) {
   return strng.replace(/[0-8]?9*$/, w => ++w)
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, incrementString, }
+function calc(x) {
+  let total = ''
+  let total2 = ''
+  let totalSum
+  let totalSum2
+
+  const toAmount = (str) => {
+    return str.split('').reduce((sum, current) => +sum + +current)
+  }
+
+  for (let i = 0; i < x.length; i++) {
+    let code = x.codePointAt(i)
+    total += code
+  }
+
+  for (let i = 0; i < total.length; i++) {
+    if (total[i] === '7') {
+      total2 += 1
+    } else {
+      total2 += total[i]
+    }
+  }
+
+  totalSum = toAmount(total)
+  totalSum2 = toAmount(total2)
+
+  let result = totalSum - totalSum2
+
+  return result
+}
+
+export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, incrementString, calc, }
