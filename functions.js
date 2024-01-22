@@ -1,14 +1,14 @@
-const createNode = (node, text, target = document.body) => {
+export const createNode = (node, text, target = document.body) => {
   const el = document.createElement(node);
   el.textContent = text;
   target.append(el);
 }
 
-const getRandomNumber = (min, max) => {
+export const getRandomNumber = (min, max) => {
   return Math.round(Math.random() * (max - min) + min)
 }
 
-function htmlspecialchars(formData) {
+export function htmlspecialchars(formData) {
   let result = formData.split('').map((i) => {
     switch (i) {
       case "<":
@@ -31,7 +31,7 @@ function htmlspecialchars(formData) {
   return result;
 }
 
-function toCamelCase(str) {
+export function toCamelCase(str) {
 
   const re = /\-\D/g
   const re1 = /\_\D/g
@@ -41,7 +41,7 @@ function toCamelCase(str) {
 
 }
 
-function remove(s, n) {
+export function remove(s, n) {
   let maxS = s.match(/!/g).length;
   let maxN = (n <= maxS) ? n : maxS;
 
@@ -51,7 +51,7 @@ function remove(s, n) {
   return s;
 }
 
-function generateHashtag(str) {
+export function generateHashtag(str) {
   str = str.trim();
   if (str.length === 0) return false;
 
@@ -68,7 +68,7 @@ function generateHashtag(str) {
   return (result.length > 140) ? false : result;
 }
 
-function pipeFix(numbers) {
+export function pipeFix(numbers) {
   let setNumbers = new Set(numbers)
 
   for (let i = numbers[0]; i < numbers[numbers.length - 1]; i++) {
@@ -79,7 +79,7 @@ function pipeFix(numbers) {
   return arrNumbers
 }
 
-function validBraces(braces) {
+export function validBraces(braces) {
   let opening = ['(', '[', '{']
   let closing = [')', ']', '}']
   let arr = []
@@ -95,7 +95,7 @@ function validBraces(braces) {
   return arr.length === 0;
 }
 
-function toCsvText(array) {
+export function toCsvText(array) {
   let result = '';
   for (let i = 0; i < array.length; i++) {
     let str = array[i].join(",")
@@ -125,7 +125,7 @@ function toCsvText(array) {
 //   }
 //   return result;
 // }
-function firstNonRepeatingLetter(s) {
+export function firstNonRepeatingLetter(s) {
   for (var i in s) {
     if (s.match(new RegExp(s[i], "gi")).length === 1) {
       return s[i];
@@ -134,11 +134,11 @@ function firstNonRepeatingLetter(s) {
   return '';
 }
 
-function incrementString(strng) {
+export function incrementString(strng) {
   return strng.replace(/[0-8]?9*$/, w => ++w)
 }
 
-function calc(x) {
+export function calc(x) {
   let total = ''
   let total2 = ''
   let totalSum
@@ -169,4 +169,13 @@ function calc(x) {
   return result
 }
 
-export { createNode, getRandomNumber, htmlspecialchars, toCamelCase, remove, generateHashtag, pipeFix, validBraces, toCsvText, firstNonRepeatingLetter, incrementString, calc, }
+export function sayHello(name, city, state) {
+
+  let greeting = `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+
+  return greeting
+}
+
+export function digitize(n) {
+  return Array.from(String(n), Number).reverse()
+}
