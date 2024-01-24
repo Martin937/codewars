@@ -217,3 +217,22 @@ export const rps = (p1, p2) => {
     }
   }
 };
+
+export function catchSignChange(arr) {
+  let positiveSign = (arr[0] >= 0 || arr.length === 0) ? true : false;
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (positiveSign) {
+      if (arr[i] < 0) {
+        count += 1;
+        positiveSign = !positiveSign
+      }
+    } else {
+      if (arr[i] >= 0) {
+        count++;
+        positiveSign = !positiveSign
+      }
+    }
+  }
+  return count
+}

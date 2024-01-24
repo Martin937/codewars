@@ -20,14 +20,13 @@ func.createNode('p', `12. digitize: ${func.digitize(35231)}`, target);
 func.createNode('p', `13. guesser: ${classes.guesser.guess(1)}`, target);
 func.createNode('p', `14. countBy: ${func.countBy(2, 5)}`, target);
 func.createNode('p', `15. rps: ${func.rps('rock', 'scissors')}`, target);
+func.createNode('p', `16. catchSignChange: ${func.catchSignChange([1, -3, -4, 0, 5])}`, target);
 
 
 
 
 
-// console.log(rps('rock', 'scissors')); //'камень', 'ножницы'
-// console.log(rps('paper', 'scissors')); //'ножницы', 'бумага'
-// console.log(rps('paper', 'paper')); // 'бумага', 'камень'
+
 
 
 
