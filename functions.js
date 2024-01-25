@@ -216,7 +216,7 @@ export const rps = (p1, p2) => {
       return 'Player 2 won!'
     }
   }
-};
+}
 
 export function catchSignChange(arr) {
   let positiveSign = (arr[0] >= 0 || arr.length === 0) ? true : false;
@@ -235,4 +235,24 @@ export function catchSignChange(arr) {
     }
   }
   return count
+}
+//возвращаем плоский массив, представляющий значения треугольника Паскаля до n-го уровня
+export function pascalsTriangle(n) {
+  if (n === 0 || !n) return [];
+  let arraysObject = {};
+  for (let row = 0; row < n; row++) {
+    arraysObject[row] = [];
+    for (let col = 0; col < row + 1; col++) {
+      if (col === 0 || col === row) {
+        arraysObject[row][col] = 1;
+      } else {
+        arraysObject[row][col] = arraysObject[row - 1][col - 1] + arraysObject[row - 1][col];
+      }
+    }
+  }
+  let result = [];
+  for (const key in arraysObject) {
+    result.push(...arraysObject[key]);
+  }
+  return result;
 }
