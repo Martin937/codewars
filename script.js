@@ -22,13 +22,6 @@ func.createNode('p', `14. countBy: ${func.countBy(2, 5)}`, target);
 func.createNode('p', `15. rps: ${func.rps('rock', 'scissors')}`, target);
 func.createNode('p', `16. catchSignChange: ${func.catchSignChange([1, -3, -4, 0, 5])}`, target);
 func.createNode('p', `17. pascalsTriangle: ${func.pascalsTriangle(4)}`, target);
-
-
-
-
-
-
-
-
-
+func.createNode('p', `18. doMath: ${func.doMath("111a 222c 444y 777u 999a 888p")}`, target);
+func.createNode('p', `19. sortEmotions: ${func.sortEmotions([':D', 'T_T', ':D', ':('], true)}`, target);
 

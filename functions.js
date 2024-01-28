@@ -256,3 +256,85 @@ export function pascalsTriangle(n) {
   }
   return result;
 }
+
+export function doMath(string) {
+  const arrayFromString = string.split(' ')
+  const objectFromString = {}
+  for (let i = 0; i < arrayFromString.length; i++) {
+    let el = arrayFromString[i]
+    let key;
+    let value = '';
+    for (let j = 0; j < el.length; j++) {
+      if (!/[^a-z]/i.test(el[j])) {
+        key = el[j]
+      }
+      if (/[^a-z]/i.test(el[j])) {
+        value += el[j]
+      }
+    }
+    if (key in objectFromString) {
+      objectFromString[key + Object.keys(objectFromString).length] = +value
+    } else {
+      objectFromString[key] = +value
+    }
+  }
+  let arrayFromObject = Object.entries(objectFromString).sort()
+  arrayFromObject = Object.fromEntries(arrayFromObject)
+  arrayFromObject = Object.values(arrayFromObject)
+  let res = arrayFromObject.reduce(function (sum, curent, index) {
+    switch (index) {
+      case 1:
+      case 5:
+      case 9:
+        return sum = sum + curent
+        break;
+      case 2:
+      case 6:
+      case 10:
+        return sum = sum - curent
+        break;
+      case 3:
+      case 7:
+      case 11:
+        return sum = sum * curent
+        break;
+      case 4:
+      case 8:
+      case 12:
+        return sum = sum / curent
+        break;
+      default:
+        break;
+    }
+    return sum
+  });
+  return (Math.round(res))
+}
+
+export function sortEmotions(arr, order) {
+  let objectsArray = arr.map((el) => {
+    switch (el) {
+      case ':D':
+        return order ? el = 0 + el : el = 4 + el
+        break;
+      case ':)':
+        return order ? el = 1 + el : el = 3 + el
+        break;
+      case ':|':
+        return order ? el = 2 + el : el = 2 + el
+        break;
+      case ':(':
+        return order ? el = 3 + el : el = 1 + el
+        break;
+      case 'T_T':
+        return order ? el = 4 + el : el = 0 + el
+        break;
+      default:
+        break;
+    }
+  }).sort()
+  for (let i = 0; i < objectsArray.length; i++) {
+    objectsArray[i] = objectsArray[i].replace(/[0-9]/g, '');
+  }
+  return objectsArray
+}
